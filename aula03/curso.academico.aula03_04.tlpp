@@ -1,0 +1,25 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0304()
+
+    Local cNome := "  Carlos Silva  "
+    Local cNomeLimpo := ""
+    Local cNomeMaiusculo := ""
+
+    cNomeLimpo := AllTrim(cNome)
+    cNomeMaiusculo := Upper(cNomeLimpo)
+
+    ConOut("Nome original: [" + cNome + "]")
+    ConOut("Nome limpo: [" + cNomeLimpo + "]")
+    ConOut("Maiusculo: [" + cNomeMaiusculo + "]")
+
+    ConOut("Primeiros 6 caracteres: " + ;
+        SubStr(cNomeLimpo, 1, 6))
+
+    ConOut("Tamanho: " + ;
+        cValToChar(Len(cNomeLimpo)))
+
+return

@@ -1,0 +1,41 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0305()
+
+    Local aNotas := {8, 7, 9, 10}
+    Local nMedia := 0
+
+    nMedia := MediaNotas(aNotas)
+
+    ConOut("MEDIA DINAMICA")
+    ConOut("Quantidade: " + ;
+        cValToChar(Len(aNotas)))
+
+    ConOut("Media: " + cValToChar(nMedia))
+
+return
+
+/*
+    Calcula a media dos valores do array.
+    Retorna zero se o array estiver vazio.
+*/
+static function MediaNotas(aNotas)
+
+    Local nSoma := 0
+    Local nMedia := 0
+    Local nI := 0
+
+    If Len(aNotas) == 0
+        return 0
+    EndIf
+
+    For nI := 1 To Len(aNotas)
+        nSoma += aNotas[nI]
+    Next nI
+
+    nMedia := nSoma / Len(aNotas)
+
+return nMedia

@@ -1,0 +1,23 @@
+
+#include "totvs.ch"
+#include "tlpp-core.th"
+
+/*
+   Curso TLPP - Aula 01
+   Objetivo: trabalhar com namespace
+*/
+
+namespace curso.academico
+
+// Funcao principal do exemplo
+user function OlaTlpp()
+
+    Local cNome := "Aluno"
+
+    ConOut("================================")
+    ConOut("CURSO COMPLETO DE TLPP")
+    ConOut("Ola, " + cNome)
+    ConOut("Primeiro programa TLPP executado!")
+    ConOut("================================")
+
+return

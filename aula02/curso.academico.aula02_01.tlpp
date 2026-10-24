@@ -1,0 +1,26 @@
+
+#include "tlpp-core.th"
+
+/*
+    Curso Completo de TLPP
+    Aula 02 - Exemplo 01
+
+    Objetivo:
+    Entender a estrutura de um fonte TLPP.
+*/
+
+namespace curso.academico
+
+user function Aula0201()
+
+    Local cMensagem := "Estudando TLPP"
+
+    ConOut("================================")
+    ConOut("AULA 02 - ESTRUTURA TLPP")
+    ConOut("================================")
+
+    ConOut(cMensagem)
+
+    ConOut("Namespace: curso.academico")
+
+return

@@ -1,0 +1,22 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0203()
+
+    Local cNome    := "Carlos Silva"
+    Local nIdade   := 20
+    Local lAtivo   := .T.
+    Local dHoje    := Date()
+    Local aNotas   := {8, 6, 10}
+
+    ConOut("TIPOS DE DADOS TLPP")
+
+    ConOut("Nome: " + ValType(cNome))
+    ConOut("Idade: " + ValType(nIdade))
+    ConOut("Ativo: " + ValType(lAtivo))
+    ConOut("Data: " + ValType(dHoje))
+    ConOut("Notas: " + ValType(aNotas))
+
+return

@@ -1,0 +1,55 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+/*
+    Funcao principal
+*/
+user function Aula0202()
+
+    Local nNota1 := 8
+    Local nNota2 := 6
+    Local nMedia := 0
+
+    nMedia := CalculaMedia(nNota1, nNota2)
+
+    ConOut("================================")
+    ConOut("AULA 02 - FUNCOES")
+    ConOut("================================")
+
+    ConOut("Nota 1: " + cValToChar(nNota1))
+    ConOut("Nota 2: " + cValToChar(nNota2))
+    ConOut("Media: " + cValToChar(nMedia))
+
+    If ValidaMedia(nMedia)
+        ConOut("Situacao: APROVADO")
+    Else
+        ConOut("Situacao: REPROVADO")
+    EndIf
+
+return
+
+/*
+    Calcula a media
+*/
+static function CalculaMedia(nNota1, nNota2)
+
+    Local nResultado := 0
+
+    nResultado := (nNota1 + nNota2) / 2
+
+return nResultado
+
+/*
+    Valida a media
+*/
+static function ValidaMedia(nMedia)
+
+    Local lAprovado := .F.
+
+    If nMedia >= 7
+        lAprovado := .T.
+    EndIf
+
+return lAprovado

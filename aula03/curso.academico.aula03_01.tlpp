@@ -1,0 +1,21 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0301()
+
+    Local aNotas := {8, 6, 10}
+
+    ConOut("================================")
+    ConOut("AULA 03 - ARRAYS")
+    ConOut("================================")
+
+    ConOut("Nota 1: " + cValToChar(aNotas[1]))
+    ConOut("Nota 2: " + cValToChar(aNotas[2]))
+    ConOut("Nota 3: " + cValToChar(aNotas[3]))
+
+    ConOut("Quantidade: " + ;
+        cValToChar(Len(aNotas)))
+
+return

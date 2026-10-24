@@ -1,0 +1,32 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0303()
+
+    Local aAlunos := { ;
+        {"000001", "Carlos Silva", 8, 7, 9}, ;
+        {"000002", "Maria Oliveira", 5, 6, 7}, ;
+        {"000003", "Joao Santos", 9, 9, 10} }
+
+    Local nI := 0
+
+    For nI := 1 To Len(aAlunos)
+
+        ConOut("----------------------------")
+        ConOut("Matricula: " + aAlunos[nI][1])
+        ConOut("Aluno: " + aAlunos[nI][2])
+
+        ConOut("Nota 1: " + ;
+            cValToChar(aAlunos[nI][3]))
+
+        ConOut("Nota 2: " + ;
+            cValToChar(aAlunos[nI][4]))
+
+        ConOut("Nota 3: " + ;
+            cValToChar(aAlunos[nI][5]))
+
+    Next nI
+
+return

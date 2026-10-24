@@ -1,0 +1,26 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0302()
+
+    Local aNotas := {5, 7}
+    Local nI := 0
+
+    // Adiciona uma terceira nota
+    AAdd(aNotas, 9)
+
+    // Altera a primeira nota
+    aNotas[1] := 8
+
+    ConOut("NOTAS DO ALUNO")
+
+    For nI := 1 To Len(aNotas)
+
+        ConOut("Nota " + cValToChar(nI) + ;
+            ": " + cValToChar(aNotas[nI]))
+
+    Next nI
+
+return

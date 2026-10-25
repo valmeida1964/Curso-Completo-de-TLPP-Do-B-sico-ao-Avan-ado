@@ -1,0 +1,39 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0504()
+
+    Local aAlunos := { ;
+        {"000001", "Carlos Silva", {8, 7, 9}}, ;
+        {"000002", "Maria Oliveira", {5, 6, 7}} }
+
+    Local aNovoAluno := { ;
+        "000003", ;
+        "Joao Santos", ;
+        {9, 9, 10} }
+
+    Local nPos := 0
+
+    /*
+        Verifica se a matricula existe.
+    */
+    nPos := AScan(aAlunos, ;
+        {|aAluno| aAluno[1] == aNovoAluno[1]})
+
+    If nPos > 0
+
+        ConOut("ERRO: Matricula ja cadastrada.")
+
+    Else
+
+        AAdd(aAlunos, aNovoAluno)
+
+        ConOut("Aluno incluido com sucesso.")
+
+    EndIf
+
+    ConOut("Total: " + cValToChar(Len(aAlunos)))
+
+return

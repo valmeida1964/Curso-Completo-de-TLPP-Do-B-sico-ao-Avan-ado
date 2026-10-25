@@ -1,0 +1,31 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0501()
+
+    Local aAlunos := { ;
+        {"000001", "Carlos Silva", {8, 7, 9}}, ;
+        {"000002", "Maria Oliveira", {5, 6, 7}}, ;
+        {"000003", "Joao Santos", {9, 9, 10}} }
+
+    Local cMatricula := "000002"
+    Local nPos := 0
+
+    nPos := AScan(aAlunos, ;
+        {|aAluno| aAluno[1] == cMatricula})
+
+    If nPos > 0
+
+        ConOut("Aluno encontrado.")
+        ConOut("Posicao: " + cValToChar(nPos))
+        ConOut("Nome: " + aAlunos[nPos][2])
+
+    Else
+
+        ConOut("Aluno nao encontrado.")
+
+    EndIf
+
+return

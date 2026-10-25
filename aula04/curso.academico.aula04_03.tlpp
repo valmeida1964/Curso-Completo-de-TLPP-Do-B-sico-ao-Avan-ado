@@ -1,0 +1,54 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0403()
+
+    Local aNotas := {8, 7, 9}
+    Local aRet := {}
+
+    aRet := ProcMed04(aNotas)
+
+    If aRet[1]
+        ConOut("Media: " + cValToChar(aRet[2]))
+    Else
+        ConOut("Erro: " + aRet[3])
+    EndIf
+
+return
+
+/*
+    Retorno:
+    [1] Sucesso - Logico
+    [2] Media   - Numerico
+    [3] Erro    - Caracter
+*/
+static function ProcMed04(aNotas)
+
+    Local nI := 0
+    Local nSoma := 0
+
+    If ValType(aNotas) <> "A"
+        return {.F., 0, "Notas devem ser um array."}
+    EndIf
+
+    If Len(aNotas) == 0
+        return {.F., 0, "Nenhuma nota informada."}
+    EndIf
+
+    For nI := 1 To Len(aNotas)
+
+        If ValType(aNotas[nI]) <> "N"
+            return {.F., 0, "Nota nao numerica."}
+        EndIf
+
+        If aNotas[nI] < 0 .Or. aNotas[nI] > 10
+            return {.F., 0, "Nota fora do intervalo."}
+        EndIf
+
+        nSoma += aNotas[nI]
+
+    Next nI
+
+return {.T., nSoma / Len(aNotas), ""}

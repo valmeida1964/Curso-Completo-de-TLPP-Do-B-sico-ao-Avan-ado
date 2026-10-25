@@ -1,0 +1,52 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0402()
+
+    Local aNotas := {8, 7, 9}
+    Local cErro := ""
+
+    cErro := ValNotas04(aNotas)
+
+    If Empty(cErro)
+        ConOut("Notas validas.")
+    Else
+        ConOut("Erro: " + cErro)
+    EndIf
+
+return
+
+/*
+    Retorna uma mensagem quando
+    encontra um erro.
+
+    Retorna texto vazio quando
+    todas as notas sao validas.
+*/
+static function ValNotas04(aNotas)
+
+    Local nI := 0
+
+    If ValType(aNotas) <> "A"
+        return "Notas devem ser um array."
+    EndIf
+
+    If Len(aNotas) == 0
+        return "Informe pelo menos uma nota."
+    EndIf
+
+    For nI := 1 To Len(aNotas)
+
+        If ValType(aNotas[nI]) <> "N"
+            return "Nota deve ser numerica."
+        EndIf
+
+        If aNotas[nI] < 0 .Or. aNotas[nI] > 10
+            return "Nota fora do intervalo 0 a 10."
+        EndIf
+
+    Next nI
+
+return ""

@@ -1,0 +1,26 @@
+
+#include "tlpp-core.th"
+
+namespace curso.academico
+
+user function Aula0401()
+
+    Local oAluno := JsonObject():New()
+
+    oAluno["matricula"] := "000001"
+    oAluno["nome"]      := "Carlos Silva"
+    oAluno["notas"]     := {8, 7, 9}
+
+    ConOut("================================")
+    ConOut("AULA 04 - OBJETO DINAMICO")
+    ConOut("================================")
+
+    ConOut("Matricula: " + oAluno["matricula"])
+    ConOut("Nome: " + oAluno["nome"])
+
+    ConOut("Primeira nota: " + ;
+        cValToChar(oAluno["notas"][1]))
+
+    FreeObj(oAluno)
+
+return
